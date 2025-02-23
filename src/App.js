@@ -70,13 +70,13 @@ function App() {
         9️⃣ ThemeSwitcher Test - Fix this component so that the theme can be
         toggled using React Context.
       </h2>
-      {/* <ThemeSwitcher /> */}
+      <ThemeSwitcher />
 
       <h2>
         🔟 Toggle Test - Fix this component so that clicking the button toggles
         the text between "ON" and "OFF".
       </h2>
-      {/* <Toggle /> */}
+      <Toggle />
     </div>
   );
 }

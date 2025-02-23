@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 const ClickCounter = () => {
   const [count, setCount] = useState(0);
 
+  // Add count as a dependency to useEffect to run the effect when count state changes.
   useEffect(() => {
     console.log(`You clicked ${count} times`);
-  }, []);
+  }, [count]);
 
   return (
     <div>

@@ -1,13 +1,22 @@
-import React, { createContext, useContext, useState } from 'react';
-
+import React, { createContext, useContext, useState, Dispatch,  SetStateAction} from 'react';
+type ThemeContextType = {
+  theme: string;
+  setTheme: Dispatch<SetStateAction<string>>;
+};
 // Fix this component so that the theme can be toggled using React Context.
-const ThemeContext = createContext('light');
+const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  setTheme: () => {},
+});
+
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
 
   return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
@@ -24,8 +33,8 @@ const ThemeSwitcher = () => {
   );
 };
 
-// export default () => (
-//   <ThemeProvider>
-//     <ThemeSwitcher />
-//   </ThemeProvider>
-// );
+export default () => (
+  <ThemeProvider>
+    <ThemeSwitcher />
+  </ThemeProvider>
+);

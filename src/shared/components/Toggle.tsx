@@ -7,7 +7,7 @@ const Toggle = () => {
   return (
     <div>
       <p>Status: {isOn ? 'ON' : 'OFF'}</p>
-      <button onClick={setIsOn(!isOn)}>Toggle</button>
+      <button onClick={() => setIsOn(!isOn)}>Toggle</button>
     </div>
   );
 };

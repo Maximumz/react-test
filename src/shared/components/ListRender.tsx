@@ -6,8 +6,8 @@ const ListRender = () => {
 
   return (
     <ul>
-      {items.map((item) => (
-        <li>{item}</li>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li> // Add a unique key
       ))}
     </ul>
   );
