@@ -4,9 +4,13 @@ import React, { useState } from 'react';
 const FormInput = () => {
   const [inputValue, setInputValue] = useState('');
 
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div>
-      <input type='text' value={inputValue} onChange={(e) => setInputValue} />
+      <input type='text' value={inputValue} onChange={handleInputChange} />
       <p>You typed: {inputValue}</p>
     </div>
   );
