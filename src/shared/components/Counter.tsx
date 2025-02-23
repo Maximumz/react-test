@@ -4,10 +4,15 @@ import React, { useState } from 'react';
 const Counter = () => {
   const [count, setCount] = useState(0);
 
+  // Setup a onClick handler to update the counter.
+  const incrementCount = () => {
+    setCount((previousCount) => previousCount + 1);
+  };
+
   return (
     <div>
       <p>Count: {count}</p>
-      {/* <button onClick={setCount(count)}>Increment</button> */}
+      <button onClick={incrementCount}>Increment</button>
     </div>
   );
 };
