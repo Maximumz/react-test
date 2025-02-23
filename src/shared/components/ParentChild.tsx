@@ -6,7 +6,8 @@ const Parent = () => {
 };
 
 const Child = (props) => {
-  return <p>{props.text}</p>;
+  // access the message prop.
+  return <p>{props.message}</p>;
 };
 
 export default Parent;
